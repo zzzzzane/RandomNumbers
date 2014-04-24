@@ -1,0 +1,18 @@
+{
+    "versionLabel": "1.0",
+    "capabilities": [
+        ""
+    ],
+    "shortName": "Random#",
+    "longName": "RandomNumbers",
+    "versionCode": 1,
+    "uuid": "1ad8026a-3744-4c73-93e4-b0732b8c14bc",
+    "resources": {
+        "media": []
+    },
+    "watchapp": {
+        "watchface": true
+    },
+    "appKeys": {},
+    "companyName": "Zzzzzane"
+}
