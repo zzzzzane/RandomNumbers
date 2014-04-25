@@ -1,18 +1,18 @@
 {
-    "appKeys": {},
+    "uuid": "1ad8026a-3744-4c73-93e4-b0732b8c14bc",
     "resources": {
         "media": []
     },
-    "watchapp": {
-        "watchface": true
-    },
-    "shortName": "Random#",
-    "versionLabel": "1.0",
-    "versionCode": 1,
-    "longName": "RandomNumbers",
-    "companyName": "Zzzzzane",
     "capabilities": [
         ""
     ],
-    "uuid": "1ad8026a-3744-4c73-93e4-b0732b8c14bc"
+    "companyName": "Zzzzzane",
+    "shortName": "Random#",
+    "longName": "RandomNumbers",
+    "watchapp": {
+        "watchface": true
+    },
+    "versionCode": 1,
+    "appKeys": {},
+    "versionLabel": "1.0"
 }

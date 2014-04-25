@@ -49,14 +49,18 @@ static void fill_window(struct tm* tick_time) {
 			strcat(full_string, ".");
 		  	continue;
 			
-		  	case 40 : //i == 40
+		  	case 40 : //i == 40  
 		  	strcat(full_string, time_day); //day to last row, last slot
 			strcat(full_string, "\n");
 			continue;
 		  
 		  	default : //if 'i' isn't equal to one of the values above... do this instead!
-		  	r = rand() % 99 + 1; //random number, 1-99; this bypasses the whole check for zero
-		  	if (r < 10)
+        if (tick_time->tm_min == 0 )
+           r = tick_time->tm_hour;
+        else
+		  	   r = rand() % 99 + 1; //random number, 1-99; this bypasses the whole check for zero
+
+          if (r < 10)
 				strcat(full_string, "0");
 			strcat(full_string, itoa(r));
 			if ((i % 5) == 0)
@@ -79,7 +83,7 @@ static void handle_minute_tick(struct tm* tick_time, TimeUnits units_changed) {
     const char *StringPtr ;
   
   /*Random numbers change once per 10 minutes */ 
-	if ((tick_time->tm_min % 10) == 0) 
+	if (((tick_time->tm_min % 10) == 0) || (tick_time->tm_min == 1)) 
   {
     fill_window(tick_time);
   }  else
