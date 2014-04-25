@@ -55,18 +55,23 @@ static void fill_window(struct tm* tick_time) {
 			continue;
 		  
 		  	default : //if 'i' isn't equal to one of the values above... do this instead!
-        if (tick_time->tm_min == 0 )
-           r = tick_time->tm_hour;
+        if (tick_time->tm_min == 0) {
+          			  strcpy(full_string, time_hours);
+        }
         else
-		  	   r = rand() % 99 + 1; //random number, 1-99; this bypasses the whole check for zero
+        {
+		  	r = rand() % 99 + 1; //random number, 1-99; this bypasses the whole check for zero
 
-          if (r < 10)
-				strcat(full_string, "0");
-			strcat(full_string, itoa(r));
-			if ((i % 5) == 0)
-				strcat(full_string, "\n");
-			else
-				strcat(full_string, ".");
+        if (r < 10)
+				  strcat(full_string, "0");
+                       
+			  strcat(full_string, itoa(r));
+        }
+        
+			  if ((i % 5) == 0)
+				  strcat(full_string, "\n");
+			  else
+				  strcat(full_string, ".");
 	  }
 	}
   	text_layer_set_text(time_layer, full_string); //set the text
