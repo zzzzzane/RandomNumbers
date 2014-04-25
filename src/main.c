@@ -71,12 +71,11 @@ static void fill_window(struct tm* tick_time) {
 /*called once per minute*/
 static void handle_minute_tick(struct tm* tick_time, TimeUnits units_changed) {
 
-
+    static char full_string2[125];
   	static char time_hours[] = "00";
  	  static char time_minutes[] = "00";
   	static char time_month[] = "00";
   	static char time_day[] = "00";
-    static char full_string[125];
     const char *StringPtr ;
   
   /*Random numbers change once per 10 minutes */ 
@@ -98,16 +97,16 @@ static void handle_minute_tick(struct tm* tick_time, TimeUnits units_changed) {
   
   /* replace the date and time only */
     StringPtr = text_layer_get_text(time_layer);
-    strcpy(full_string, StringPtr);
-    full_string[1] = time_hours[1];
-    full_string[2] = time_hours[2];
-    full_string[13] = time_minutes[1];
-    full_string[14] = time_minutes[2];
-    full_string[105] = time_month[1];
-    full_string[106] = time_month[2];
-    full_string[117] = time_day[1];
-    full_string[118] = time_day[2];
-	  text_layer_set_text(time_layer, full_string); //set the text
+    strcpy(full_string2, StringPtr);
+    full_string2[0] = time_hours[0];
+    full_string2[1] = time_hours[1];
+    full_string2[12] = time_minutes[0];
+    full_string2[13] = time_minutes[1];
+    full_string2[104] = time_month[0];
+    full_string2[105] = time_month[1];
+    full_string2[116] = time_day[0];
+    full_string2[117] = time_day[1];
+	  text_layer_set_text(time_layer, full_string2); //set the text
   }
   }
 
