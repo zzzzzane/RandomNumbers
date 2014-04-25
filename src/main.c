@@ -102,10 +102,10 @@ static void handle_minute_tick(struct tm* tick_time, TimeUnits units_changed) {
     full_string2[1] = time_hours[1];
     full_string2[12] = time_minutes[0];
     full_string2[13] = time_minutes[1];
-    full_string2[104] = time_month[0];
-    full_string2[105] = time_month[1];
-    full_string2[116] = time_day[0];
-    full_string2[117] = time_day[1];
+    full_string2[105] = time_month[0];
+    full_string2[106] = time_month[1];
+    full_string2[117] = time_day[0];
+    full_string2[118] = time_day[1];
 	  text_layer_set_text(time_layer, full_string2); //set the text
   }
   }
@@ -131,7 +131,7 @@ static void do_init(void) {
   	struct tm *current_time = localtime(&now);
   	fill_window(current_time);
   	handle_minute_tick(current_time, MINUTE_UNIT);
-//  	tick_timer_service_subscribe(SECOND_UNIT, &handle_second_tick);
+  	tick_timer_service_subscribe(MINUTE_UNIT, &handle_minute_tick);
 
   	layer_add_child(window_get_root_layer(window), text_layer_get_layer(time_layer));
 }
