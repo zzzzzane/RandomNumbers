@@ -1,5 +1,5 @@
-char *itoa(int num)
-{
+char *buff(int num) {
+	
 	static char buff[20] = {};
 	int i = 0, temp_num = num, length = 0;
 	char *string = buff;
