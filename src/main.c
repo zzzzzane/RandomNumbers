@@ -56,7 +56,7 @@ static void fill_window(struct tm* tick_time) {
 		  
 		  	default : //if 'i' isn't equal to one of the values above... do this instead!
         if (tick_time->tm_min == 0) {
-          			  strcpy(full_string, time_hours);
+          			  strcat(full_string, time_hours);
         }
         else
         {
